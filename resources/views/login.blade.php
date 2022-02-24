@@ -4,7 +4,7 @@
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<title>Backend Project - Login Page</title>
-	<link rel="stylesheet" type="text/css" href="style.css">
+	<link rel="stylesheet" type="text/css" href="css/style.css">
 </head>
 <body>
 	<div class="login-page">
@@ -13,7 +13,7 @@
 	      <input type="text" placeholder="username"/>
 	      <input type="password" placeholder="password"/>
 	      <button>login</button>
-	      <p class="message">Not registered? <a href="#">Create an account</a></p>
+	      <p class="message">Not registered? <a href="{{route('register')}}">Create an account</a></p>
 	    </form>
 	  </div>
 
