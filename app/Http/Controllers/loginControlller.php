@@ -10,7 +10,19 @@ class loginControlller extends Controller
         return view('login');
     }
 
-    public function store() {
-        return 'you are loged in';
+    public function store(Request $request) {
+        $this->validate($request, [
+            'username' => 'required|max:255',
+            'password' => 'required',
+        ]);
+
+        //sign a user in
+        if(!auth()->attempt($request->only('username', 'password'))) {
+            return back()->with('status', 'Invalid login details');
+        };
+
+        
+        //redirect to the dashboard
+        return redirect()->route('dashboard');
     }
 }
