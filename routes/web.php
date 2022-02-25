@@ -20,5 +20,11 @@ Route::get('/', function () {
 });
 
 Route::get('/login', [loginControlller::class, 'index'])->name('login');
+Route::post('/login', [loginControlller::class, 'store']);
 
 Route::get('/register', [RegisterController::class, 'index'])->name('register');
+Route::post('/register', [RegisterController::class, 'store']);
+
+Route::get('/dashboard', function () {
+    return view('dashboard');
+})->name('dashboard');
