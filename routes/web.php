@@ -26,5 +26,6 @@ Route::get('/register', [RegisterController::class, 'index'])->name('register');
 Route::post('/register', [RegisterController::class, 'store']);
 
 Route::get('/dashboard', function () {
-    return view('dashboard');
+    $user = auth()->user()->username;
+    return view('dashboard', ['user' =>$user]);
 })->name('dashboard');
