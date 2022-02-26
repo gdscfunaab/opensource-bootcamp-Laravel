@@ -6,6 +6,6 @@
     <title>Dashboard</title>
 </head>
 <body>
-    You are logged in.
+    You are logged in, {{ $user }}.
 </body>
 </html>
